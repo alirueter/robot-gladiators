@@ -106,5 +106,44 @@ for(var i = 0; i < enemyNames.length; i++) {
     break;
   }
 
+//function to start a new game
+  var startGame = function() {
+    for (var i = 0; i < enemyNames.length; i++){
+      if (playerHealth > 0) {
+        window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
+  
+        var pickedEnemyName = enemyNames[i];
+  
+        enemyHealth = 50;
+  
+        fight(pickedEnemyName);
+      }
+      else {
+        window.alert("You have lost your robot in battle! Game Over!");
+        break;
+      }
+    }
+    //play again
+    startGame();
+  };
 
 //fight()
+
+//start the game when the page loads
+startGame();
+
+//when the player is defeated or there are no more enemies, call an endGame() function
+
+  //alert the player's total stats
+  //ask player if they want to play again
+  //if yes, call startGame() to restart the game
+
+//after the player skips or defeats an enemy & there are still more robots to fight
+  //ask the player if they want to "shop"
+  //if no, continue as normal
+  //if yes, call the shop() function
+  //in the shop() function, as the player if they want to "refill" health, "upgrade" attack, or "leave" the shop
+  //if refill, subtract money points from player and increase health
+  //if upgrade, subtract money points from player and increase attack power
+  //if leave, alert goodbye and exit the function
+  //if any other invalid option, call shop() again
