@@ -138,7 +138,7 @@ var enemyInfo = [
     else {
       window.alert("You don't have enough money!");
     }
-  } // comma!
+  }
   upgradeAttack: ()=> {
     if (this.money >= 7) {
       window.alert("Upgrading player's attack by 6 for 7 dollars.");
@@ -149,7 +149,6 @@ var enemyInfo = [
       window.alert("You don't have enough money!");
     }
   }
-
 
 for(var i = 0; i < enemyInfo.length; i++) {
   if (playerInfo.health > 0){
@@ -181,7 +180,7 @@ for(var i = 0; i < enemyInfo.length; i++) {
     for (var i = 0; i < enemyInfo.length; i++){
       if (playerInfo.health > 0) {
         window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
-        debugger;
+        
         var pickedEnemyObj = enemyInfo[i];
         
         pickedEnemyObj.health = randomNumber(40, 60);
@@ -236,23 +235,19 @@ var shop = function() {
   );
 
   //use switch to carry out action
-  switch (shopOptionPrompt) {
-    case "REFILL":
-    case "refill":
+  switch (shopOptionPrompt = parseInt(shopOptionPrompt)) {
+    case 1:
       playerInfo.refillHealth();
       break;
 
-    case "UPGRADE":
-    case "upgrade":
+    case 2:
       playerInfo.upgradeAttack();
       break;
 
-    case "LEAVE":
-    case "leave":
+    case 3:
       window.alert("Leaving the store");
-
-      //do nothing, so function will end
       break;
+
     default:
       window.alert("You did not pick a valid option. Try again.");
 
